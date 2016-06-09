@@ -1,0 +1,28 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+$block->setFileType('json');
+$block->setApplicableCommands(['generate']);
+?>
+{
+  "name": "brideo/test",
+  "description": "",
+  "type": "magento2-module",
+  "version": "Brideo",
+  "license": [
+    "Commercial"
+  ],
+  "repositories": {
+    "magento": {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  },
+  "require": {
+    "magento/framework": "100.0.*"
+  },
+  "autoload": {
+    "files": [
+      "src/registration.php"
+    ]
+  }
+}
