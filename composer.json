@@ -1,0 +1,18 @@
+{
+    "name": "brideo/magento2-scaffolding",
+    "description": "Magento 2 Scaffolding Tool",
+    "require": {
+        "symfony/console": "*"
+    },
+    "authors": [
+        {
+            "name": "Nathan McBride",
+            "email": "nathan@brideo.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Brideo\\Magento2Scaffolding\\": "src/app"
+        }
+    }
+}

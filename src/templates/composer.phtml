@@ -1,13 +1,11 @@
 <?php
 /** @var Brideo\Magento2Scaffolding\Block\File $block */
-$block->setFileType('json');
-$block->setApplicableCommands(['generate']);
 ?>
 {
-  "name": "brideo/test",
+  "name": "<?php echo strtolower($this->getData('namespace')) ?>/<?php echo strtolower($this->getData('module')) ?>",
   "description": "",
   "type": "magento2-module",
-  "version": "Brideo",
+  "version": "<?php echo $this->getData('version') ?>",
   "license": [
     "Commercial"
   ],
@@ -22,7 +20,7 @@ $block->setApplicableCommands(['generate']);
   },
   "autoload": {
     "files": [
-      "src/registration.php"
+      "registration.php"
     ]
   }
 }

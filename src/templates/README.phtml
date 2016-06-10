@@ -1,9 +1,7 @@
 <?php
 /** @var Brideo\Magento2Scaffolding\Block\File $block */
-$block->setFileType('md');
-$block->setApplicableCommands(['generate']);
 ?>
-# <?php echo $block->getNamespace() ?> <?php echo $block->getModule() ?> Magento 2 module
+# <?php echo $block->getData('namespace') ?> <?php echo $block->getData('module') ?> Magento 2 module
 
 ## Synopsis
 

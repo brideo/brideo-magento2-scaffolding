@@ -1,12 +1,10 @@
 <?php
-/** @var Brideo\Magento2Scaffolding\Block\File $block */
-$block->setFileType('php');
-$block->setApplicableCommands(['generate']);
+/** @var Brideo\Magento2Scaffolding\Block\File $block */9
 ?>
 <?php echo '<?php' ?>
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    '<?php echo $block->getNamespace() ?>_<?php echo $block->getModule() ?>',
+    '<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>',
     __DIR__
 );

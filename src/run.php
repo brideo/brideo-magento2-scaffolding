@@ -23,9 +23,6 @@ foreach ($files as $file) {
         $parts = explode('/', $newFilePath);
         $directory = str_replace(end($parts), '', $newFilePath);
 
-        if (!file_exists($directory)) {
-            mkdir($directory);
-        }
 
         $newFile = fopen($newFilePath, "w");
         fwrite($newFile, $content);
@@ -33,4 +30,3 @@ foreach ($files as $file) {
     }
 
 }
-

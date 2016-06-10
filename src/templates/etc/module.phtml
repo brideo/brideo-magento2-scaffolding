@@ -1,9 +1,7 @@
 <?php
 /** @var Brideo\Magento2Scaffolding\Block\File $block */
-$block->setFileType('xml');
-$block->setApplicableCommands(['generate']);
 ?>
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="<?php echo $block->getNamespace() ?>_<?php echo $block->getModule() ?>" setup_version="<?php echo $block->getVersion() ?>"/>
+    <module name="<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>" setup_version="<?php echo $block->getData('version') ?>"/>
 </config>
