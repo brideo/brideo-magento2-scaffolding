@@ -9,14 +9,15 @@ abstract class Base
 {
 
     protected $directories = [
-        'etc'
+        'src',
+        'src/etc'
     ];
 
     protected $files = [
         'composer.json',
         'README.md',
-        'registration.php',
-        'etc/module.xml'
+        'src/registration.php',
+        'src/etc/module.xml'
     ];
 
     /**
