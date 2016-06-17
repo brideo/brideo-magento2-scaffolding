@@ -27,6 +27,6 @@ function getTemplate(Brideo\Magento2Scaffolding\Block\File $block) {
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceContainer name="content">
-        <block class="Magento\Framework\View\Element\Template" name="<?php echo getName($block) ?>" template="<?php echo getTemplate($block) ?>" />
+        <block class="Magento\Backend\Block\Template" name="<?php echo getName($block) ?>" template="<?php echo getTemplate($block) ?>" />
     </referenceContainer>
 </page>
