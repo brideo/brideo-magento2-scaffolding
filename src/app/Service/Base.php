@@ -14,10 +14,10 @@ abstract class Base
     ];
 
     protected $files = [
-        'composer.json',
-        'README.md',
-        'src/registration.php',
-        'src/etc/module.xml'
+        'composer.phtml' => 'composer.json',
+        'README.phtml' => 'README.md',
+        'src/registration.phtml' => 'src/registration.php',
+        'src/etc/module.phtml' => 'src/etc/module.xml'
     ];
 
     /**
@@ -65,25 +65,11 @@ abstract class Base
             }
         }
 
-        foreach ($this->files as $file) {
-            $template = $this->getTemplatePath($this->replaceFileExtension($file, 'phtml'));
+        foreach ($this->files as $templateFile => $moduleFile) {
+            $template = $this->getTemplatePath($templateFile);
             $contents = (new File($template, $this->data))->render();
-            (new FileWrite($this->getModulePath($file), $contents))->write();
+            (new FileWrite($this->getModulePath($moduleFile), $contents))->write();
         }
-    }
-
-    /**
-     * Replace a file extension.
-     *
-     * @param $file
-     * @param $newExtension
-     *
-     * @return string
-     */
-    protected function replaceFileExtension($file, $newExtension)
-    {
-        $info = pathinfo($file);
-        return $info['dirname'] . DIRECTORY_SEPARATOR . $info['filename'] . '.' . $newExtension;
     }
 
     /**

@@ -13,7 +13,7 @@ class GenerateCommand extends AbstractCommand
 
     protected function configure()
     {
-        $this->getBaseCommand(static::NAME, static::DESCRIPTION);
+        $this->getBaseCommand(static::NAME, static::DESCRIPTION)->addDefaultOptionalArguments();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

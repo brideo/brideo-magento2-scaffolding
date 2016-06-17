@@ -1,0 +1,13 @@
+<?php /** @var Brideo\Magento2Scaffolding\Block\File $block */ ?>
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>::<?php echo strtolower($block->getData('front_name') .'_'. $block->getData('action_name')) ?>" title="<?php echo $block->getData('namespace') ?> <?php echo $block->getData('module') ?> <?php echo $block->getData('front_name') ?> <?php echo $block->getData('action_name') ?>" sortOrder="10"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

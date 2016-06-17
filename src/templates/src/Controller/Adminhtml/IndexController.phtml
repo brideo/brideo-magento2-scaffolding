@@ -1,0 +1,61 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+echo '<?php'
+?>
+
+
+namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\Adminhtml\<?php echo $block->getData('front_name') ?>;
+
+use Magento\Backend\App\Action as BackendAction;
+use Magento\Backend\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
+class <?php echo $block->getData('action_name') ?> extends BackendAction
+{
+
+    const ADMIN_RESOURCE = '<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>::<?php echo strtolower($block->getData('front_name') .'_'.$block->getData('action_name')) ?>';
+
+    const PAGE_TITLE = '';
+
+    /**
+     * @var PageFactory
+     */
+    protected $resultPageFactory;
+
+    /**
+     * @param Context $context
+     * @param PageFactory $resultPageFactory
+     */
+    public function __construct(Context $context, PageFactory $resultPageFactory)
+    {
+        parent::__construct($context);
+        $this->resultPageFactory = $resultPageFactory;
+    }
+
+    /**
+     * Index action
+     *
+     * @return \Magento\Framework\View\Result\Page
+     */
+    public function execute()
+    {
+        /** @var \Magento\Framework\View\Result\Page $resultPage */
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
+        $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
+
+        return $resultPage;
+    }
+
+    /**
+     * Is the user allowed to view the blog post grid.
+     *
+     * @return bool
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed(static::ADMIN_RESOURCE);
+    }
+
+
+}

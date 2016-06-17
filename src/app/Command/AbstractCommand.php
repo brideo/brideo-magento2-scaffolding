@@ -4,6 +4,7 @@ namespace Brideo\Magento2Scaffolding\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
 
 abstract class AbstractCommand extends Command
 {
@@ -39,18 +40,43 @@ abstract class AbstractCommand extends Command
                 static::MODULE_NAME,
                 InputArgument::REQUIRED,
                 static::MODULE_NAME_DESCRIPTION
-            )
-            ->addArgument(
-                static::MODULE_VERSION,
-                InputArgument::OPTIONAL,
-                static::MODULE_VERSION_DESCRIPTION
-            )
-            ->addArgument(
-                static::MODULE_DIRECTORY,
-                InputArgument::OPTIONAL,
-                static::MODULE_DIRECTORY_DESCRIPTION
             );
 
         return $this;
+    }
+
+    public function addDefaultOptionalArguments()
+    {
+        $this->addArgument(
+            static::MODULE_VERSION,
+            InputArgument::OPTIONAL,
+            static::MODULE_VERSION_DESCRIPTION
+        )->addArgument(
+            static::MODULE_DIRECTORY,
+            InputArgument::OPTIONAL,
+            static::MODULE_DIRECTORY_DESCRIPTION
+        );
+
+        return $this;
+    }
+
+    protected function getVersion(InputInterface $input)
+    {
+        $version = $input->getArgument(static::MODULE_VERSION);
+        if (!$version) {
+            $version = '1.0.0';
+        }
+
+        return $version;
+    }
+
+    protected function getModuleDirectory(InputInterface $input)
+    {
+        $directory = $input->getArgument(static::MODULE_DIRECTORY);
+        if (!$directory) {
+            $directory = false;
+        }
+
+        return $directory;
     }
 }
