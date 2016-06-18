@@ -14,6 +14,6 @@ class FileTest extends PHPUnit_Framework_TestCase
     public function testTemplateRender()
     {
         $file = new File(__DIR__.'/_files/template.phtml', ['name' => 'Nathan McBride']);
-        $this->assertEquals('hello world, my name is Nathan McBride', $file->render());
+        $this->assertEquals('Hello world, my name is Nathan McBride', $file->render());
     }
 }
