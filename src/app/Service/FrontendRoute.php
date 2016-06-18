@@ -31,14 +31,16 @@ class FrontendRoute extends Base
             'src/Controller',
             $this->getControllerDirectoryName(),
             'src/view/frontend/layout',
-            $this->getTemplateDirectory()
+            $this->getTemplateDirectory(),
+            'src/Test/Unit'
         ];
 
         $files = [
             'src/etc/frontend/routes.phtml' => 'src/etc/frontend/routes.xml',
             'src/Controller/IndexController.phtml' => $this->getControllerFileName(),
             'src/view/frontend/layout/module_layout_index.phtml' => 'src/view/frontend/layout/'. $this->getLayoutXmlName(),
-            'src/view/frontend/templates/template.phtml' => $this->getTemplateFileName()
+            'src/view/frontend/templates/template.phtml' => $this->getTemplateFileName(),
+            'src/Test/Unit/ModuleTest.phtml' => 'src/Test/Unit/ModuleTest.php'
         ];
 
         $this->directories = array_merge($this->directories, $directories);

@@ -1,6 +1,6 @@
 # Brideo Magento 2 Scaffolding
 
-This is just something I am hacking together, I have the original concept up and running however I haven't tested if the brideo-example works in Magento yet. I wouldn't recommend this for development use yet.
+This module is still a hack project of mind and is far from completion. The aim of this project is to be able to build a CLI tool to help create boiler plate Magento 2 files with a good amount of test coverage.
 
 ## Generate Module
 
@@ -14,6 +14,7 @@ Will create:
     $ ./brideo-example/composer.json
     $ ./brideo-example/.gitignore
     $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
 
 
 ## Generate Admin Route
@@ -28,6 +29,7 @@ If the brideo-example doesn't exist yet, this will create:
     $ ./brideo-example/composer.json
     $ ./brideo-example/.gitignore
     $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
 
 It will also create:
 
@@ -51,6 +53,7 @@ If the brideo-example doesn't exist yet, this will create:
     $ ./brideo-example/composer.json
     $ ./brideo-example/.gitignore
     $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
 
 It will also create:
 
@@ -62,8 +65,8 @@ It will also create:
 
 ## Running Tests
  
-    
-
+    composer install
+    vendor/bin/phpunit src/app/Test
 
 ## Todo's:
 
