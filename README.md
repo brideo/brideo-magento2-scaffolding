@@ -61,6 +61,7 @@ It will also create:
     $ ./brideo-example/src/Controller/Frontname/Index.php
     $ ./brideo-example/src/view/frontend/layout/brideo_example_frontname_index.xml
     $ ./brideo-example/src/view/frontend/templates/frontname/index.phtml
+    $ ./brideo-example/Test/Unit/Controller/Frontend/IndexTest.php
     
 
 ## Running Tests

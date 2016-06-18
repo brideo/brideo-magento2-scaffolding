@@ -32,7 +32,8 @@ class FrontendRoute extends Base
             $this->getControllerDirectoryName(),
             'src/view/frontend/layout',
             $this->getTemplateDirectory(),
-            'src/Test/Unit'
+            'src/Test/Controller/',
+            $this->getControllerTestDirectoryName()
         ];
 
         $files = [
@@ -40,7 +41,7 @@ class FrontendRoute extends Base
             'src/Controller/IndexController.phtml' => $this->getControllerFileName(),
             'src/view/frontend/layout/module_layout_index.phtml' => 'src/view/frontend/layout/'. $this->getLayoutXmlName(),
             'src/view/frontend/templates/template.phtml' => $this->getTemplateFileName(),
-            'src/Test/Unit/ModuleTest.phtml' => 'src/Test/Unit/ModuleTest.php'
+            'src/Test/Controller/IndexControllerTest.phtml' => $this->getControllerTestFileName()
         ];
 
         $this->directories = array_merge($this->directories, $directories);
@@ -54,6 +55,22 @@ class FrontendRoute extends Base
     protected function getControllerFileName()
     {
         return $this->getControllerDirectoryName() . DIRECTORY_SEPARATOR . $this->data['action_name'] . '.php';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getControllerTestFileName()
+    {
+        return $this->getControllerTestDirectoryName() . DIRECTORY_SEPARATOR . $this->data['action_name'] . 'Test.php';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getControllerTestDirectoryName()
+    {
+        return 'src/Test/Controller/' . $this->data['front_name'];
     }
 
     /**

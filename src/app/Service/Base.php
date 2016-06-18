@@ -10,14 +10,16 @@ abstract class Base
 
     protected $directories = [
         'src',
-        'src/etc'
+        'src/etc',
+        'src/Test/Unit'
     ];
 
     protected $files = [
         'composer.phtml' => 'composer.json',
         'README.phtml' => 'README.md',
         'src/registration.phtml' => 'src/registration.php',
-        'src/etc/module.phtml' => 'src/etc/module.xml'
+        'src/etc/module.phtml' => 'src/etc/module.xml',
+        'src/Test/Unit/ModuleTest.phtml' => 'src/Test/Unit/ModuleTest.php'
     ];
 
     /**
