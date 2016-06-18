@@ -1,0 +1,55 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+echo '<?php'
+?>
+
+
+namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Test\Unit\Controller\Adminhtml\<?php echo $block->getData('front_name') ?>;
+
+use PHPUnit_Framework_TestCase;
+
+class <?php echo $block->getData('action_name') ?>Test extends PHPUnit_Framework_TestCase
+{
+
+    /**
+     * @var \<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\Adminhtml\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>;
+     */
+    protected $controller;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $pageFactory = $this->getMockBuilder('Magento\Framework\View\Result\PageFactory')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $page = $this->getMockBuilder('Magento\Framework\View\Result\Page')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $pageFactory->method('create')->willReturn($page);
+
+        $context = $this->getMockBuilder('Magento\Backend\App\Action\Context')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        /** @var \Magento\Backend\App\Action\Context $context */
+        /** @var \Magento\Framework\View\Result\PageFactory $pageFactory */
+        $this->controller = new \<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\Adminhtml\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>($context, $pageFactory);
+    }
+
+    protected function tearDown()
+    {
+        parent::tearDown();
+        $this->controller = null;
+    }
+
+    /**
+     * @test
+     */
+    public function testExecute()
+    {
+        $this->assertInstanceOf('Magento\Framework\View\Result\Page', $this->controller->execute());
+    }
+}

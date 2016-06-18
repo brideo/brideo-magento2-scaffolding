@@ -39,6 +39,12 @@ class <?php echo $block->getData('action_name') ?>Test extends PHPUnit_Framework
         $this->controller = new \<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>($context, $pageFactory);
     }
 
+    protected function tearDown()
+    {
+        parent::tearDown();
+        $this->controller = null;
+    }
+
     /**
      * @test
      */

@@ -15,8 +15,6 @@ class <?php echo $block->getData('action_name') ?> extends BackendAction
 
     const ADMIN_RESOURCE = '<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>::<?php echo strtolower($block->getData('front_name') .'_'.$block->getData('action_name')) ?>';
 
-    const PAGE_TITLE = '';
-
     /**
      * @var PageFactory
      */
@@ -39,12 +37,7 @@ class <?php echo $block->getData('action_name') ?> extends BackendAction
      */
     public function execute()
     {
-        /** @var \Magento\Framework\View\Result\Page $resultPage */
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
-        $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
-
-        return $resultPage;
+        return $this->resultPageFactory->create();
     }
 
     /**

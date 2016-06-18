@@ -21,7 +21,9 @@ class AdminhtmlRoute extends Base
             'src/Controller/Adminhtml',
             $this->getControllerDirectoryName(),
             'src/view/adminhtml/layout',
-            $this->getTemplateDirectory()
+            $this->getTemplateDirectory(),
+            'src/Test/Controller/Adminhtml',
+            $this->getControllerTestDirectoryName()
         ];
 
         $files = [
@@ -29,7 +31,8 @@ class AdminhtmlRoute extends Base
             'src/etc/adminhtml/routes.phtml' => 'src/etc/adminhtml/routes.xml',
             'src/Controller/Adminhtml/IndexController.phtml' => $this->getControllerFileName(),
             'src/view/adminhtml/layout/module_layout_index.phtml' => 'src/view/adminhtml/layout/'. $this->getLayoutXmlName(),
-            'src/view/adminhtml/templates/template.phtml' => $this->getTemplateFileName()
+            'src/view/adminhtml/templates/template.phtml' => $this->getTemplateFileName(),
+            'src/Test/Controller/Adminhtml/IndexControllerTest.phtml' => $this->getControllerTestFileName()
         ];
 
         $this->directories = array_merge($this->directories, $directories);
@@ -51,6 +54,22 @@ class AdminhtmlRoute extends Base
     protected function getControllerDirectoryName()
     {
         return 'src/Controller/Adminhtml/' . $this->data['front_name'];
+    }
+
+    /**
+     * @return string
+     */
+    protected function getControllerTestFileName()
+    {
+        return $this->getControllerTestDirectoryName() . DIRECTORY_SEPARATOR . $this->data['action_name'] . 'Test.php';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getControllerTestDirectoryName()
+    {
+        return 'src/Test/Controller/Adminhtml/' . $this->data['front_name'];
     }
 
     /**
