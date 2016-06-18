@@ -1,0 +1,9 @@
+<?php  /** @var Brideo\Magento2Scaffolding\Block\File $block */ ?>
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="<?php echo strtolower($block->getData('namespace') .'_'. $block->getData('module')) ?>" frontName="<?php echo strtolower($block->getData('namespace') .'_'. $block->getData('module')) ?>">
+            <module name="<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>" />
+        </route>
+    </router>
+</config>

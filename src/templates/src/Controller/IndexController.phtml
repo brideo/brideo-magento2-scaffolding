@@ -1,0 +1,42 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+echo '<?php'
+?>
+
+
+namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\<?php echo $block->getData('front_name') ?>;
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
+class <?php echo $block->getData('action_name') ?> extends Action
+{
+
+    /**
+     * @var PageFactory
+     */
+    protected $resultPageFactory;
+
+    /**
+     * <?php echo $block->getData('action_name') ?> constructor.
+     *
+     * @param Context     $context
+     * @param PageFactory $resultPageFactory
+     */
+    public function __construct(Context $context, PageFactory $resultPageFactory)
+    {
+        parent::__construct($context);
+        $this->resultPageFactory = $resultPageFactory;
+    }
+
+    /**
+     * Load the page defined in view/frontend/layout/<?php echo strtolower($this->getData('namespace') . '_' . $this->getData('module') . '_' . $this->getData('front_name') . '_' . $this->getData('action_name')) ?>.xml
+     *
+     * @return \Magento\Framework\View\Result\\Magento\Framework\View\Result\Page
+     */
+    public function execute()
+    {
+        return $this->resultPageFactory->create();
+    }
+}
