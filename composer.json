@@ -2,7 +2,8 @@
     "name": "brideo/magento2-scaffolding",
     "description": "Magento 2 Scaffolding Tool",
     "require": {
-        "symfony/console": "*"
+        "symfony/console": "*",
+        "phpunit/phpunit": "*"
     },
     "authors": [
         {

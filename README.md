@@ -59,6 +59,12 @@ It will also create:
     $ ./brideo-example/src/view/frontend/layout/brideo_example_frontname_index.xml
     $ ./brideo-example/src/view/frontend/templates/frontname/index.phtml
     
+
+## Running Tests
+ 
+    
+
+
 ## Todo's:
 
 * Add Tests
