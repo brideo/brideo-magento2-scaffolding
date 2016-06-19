@@ -38,6 +38,7 @@ It will also create:
     $ ./brideo-example/src/Controller/Adminhtml/Frontname/Index.php
     $ ./brideo-example/src/view/adminhtml/layout/brideo_example_frontname_index.xml
     $ ./brideo-example/src/view/adminhtml/templates/frontname/index.phtml
+    $ ./brideo-example/Test/Unit/Controller/Adminhtml/Frontname/IndexTest.php
     
 *Note*: if your `acl.xml` file exists already you will manually need to add your resource at this current time. This cli is still very much in alpha so I haven't got round to injecting nodes as of yet.
 
@@ -61,7 +62,7 @@ It will also create:
     $ ./brideo-example/src/Controller/Frontname/Index.php
     $ ./brideo-example/src/view/frontend/layout/brideo_example_frontname_index.xml
     $ ./brideo-example/src/view/frontend/templates/frontname/index.phtml
-    $ ./brideo-example/Test/Unit/Controller/Frontend/IndexTest.php
+    $ ./brideo-example/Test/Unit/Controller/Frontname/IndexTest.php
     
 
 ## Running Tests
@@ -81,3 +82,4 @@ It will also create:
 * Improve directory structure
 * Inject ACL resource if `acl.xml` exists already
 * Abstract duplicate logic for Admin/Frontend controllers
+* Update `composer.json` with dependencies  
