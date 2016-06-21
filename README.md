@@ -19,7 +19,7 @@ Will create:
 
 ## Generate Admin Route
 
-    php src/application.php module:route:adminhtml Brideo Example Frontname Index 1.0.0 brideo-example
+    php src/application.php module:adminhtml:route Brideo Example Frontname Index 1.0.0 brideo-example
 
 If the brideo-example doesn't exist yet, this will create:
 
@@ -44,7 +44,7 @@ It will also create:
 
 ## Generate Frontend Route
 
-    php src/application.php module:route:frontend Brideo Example Frontname Index 1.0.0 brideo-example
+    php src/application.php module:frontend:route Brideo Example Frontname Index 1.0.0 brideo-example
 
 If the brideo-example doesn't exist yet, this will create:
 

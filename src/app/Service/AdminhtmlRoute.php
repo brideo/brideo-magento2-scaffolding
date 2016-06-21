@@ -2,7 +2,7 @@
 
 namespace Brideo\Magento2Scaffolding\Service;
 
-class AdminhtmlRoute extends Base
+class AdminhtmlRoute extends Base implements ServiceInterface
 {
 
     public function __construct($namespace, $module, $frontName, $actionName, $version, $directory)

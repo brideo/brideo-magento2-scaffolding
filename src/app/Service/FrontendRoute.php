@@ -2,7 +2,7 @@
 
 namespace Brideo\Magento2Scaffolding\Service;
 
-class FrontendRoute extends Base
+class FrontendRoute extends Base implements ServiceInterface
 {
 
     /**
@@ -11,7 +11,7 @@ class FrontendRoute extends Base
      * @param             $namespace
      * @param             $module
      * @param string      $frontName
-     * @param bool|string $actionName
+     * @param string $actionName
      * @param             $version
      * @param             $directory
      */

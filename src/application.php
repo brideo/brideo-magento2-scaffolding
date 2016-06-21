@@ -5,8 +5,8 @@
 require __DIR__.'/../vendor/autoload.php';
 
 use Brideo\Magento2Scaffolding\Command\GenerateCommand;
-use Brideo\Magento2Scaffolding\Command\Route\AdminhtmlCommand as AdminRoute;
-use Brideo\Magento2Scaffolding\Command\Route\FrontendCommand as FrontendRoute;
+use Brideo\Magento2Scaffolding\Command\Adminhtml\RouteCommand as AdminRoute;
+use Brideo\Magento2Scaffolding\Command\Frontend\RouteCommand as FrontendRoute;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
