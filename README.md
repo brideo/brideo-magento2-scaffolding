@@ -80,7 +80,24 @@ It will also create:
     $ ./brideo-example/src/view/frontend/layout/brideo_example_frontname_index.xml
     $ ./brideo-example/src/view/frontend/templates/frontname/index.phtml
     $ ./brideo-example/Test/Unit/Controller/Frontname/IndexTest.php
-    
+
+## Generate Frontend Template Block
+
+    php src/application.php module:frontend:block:template Brideo Example SomeBlock 1.0.0 brideo-example
+
+If the brideo-example doesn't exist yet, this will create:
+
+    $ ./brideo-example/src
+    $ ./brideo-example/src/registration.php
+    $ ./brideo-example/src/etc/module.xml
+    $ ./brideo-example/composer.json
+    $ ./brideo-example/.gitignore
+    $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
+
+It will also create:
+
+    $ ./brideo-example/src/Block/SomeBlock.php
 
 ## Running Tests
  
