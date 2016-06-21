@@ -11,6 +11,9 @@
             "email": "nathan@brideo.co.uk"
         }
     ],
+    "bin": [
+        "bin/brideo-magento2-scaffolding"
+    ],
     "autoload": {
         "psr-4": {
             "Brideo\\Magento2Scaffolding\\": "src/app"

@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+
+<?php
+
+$autoloadFiles = array(
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../../vendor/autoload.php'
+);
+
+foreach ($autoloadFiles as $autoloadFile) {
+    if (file_exists($autoloadFile)) {
+        require_once $autoloadFile;
+        break;
+    }
+}
+if (!class_exists("Composer\\Autoload\\ClassLoader")) {
+    trigger_error("Dependencies have not been installed.  Have you run 'composer install'?", E_USER_ERROR);
+}
+
+$application = new \Brideo\Magento2Scaffolding\Application();
+$application->run();
