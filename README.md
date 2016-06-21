@@ -2,6 +2,23 @@
 
 This module is still a hack project of mind and is far from completion. The aim of this project is to be able to build a CLI tool to help create boiler plate Magento 2 files with a good amount of test coverage.
 
+## Requirements
+
+Sorry to make PHP 7 a requirement, I will add a docker environment for people running older versions of PHP.
+
+I recommend upgrading to PHP 7 if possible though.
+
+* PHP 7
+* Composer
+
+## Installation
+
+    git clone git@github.com:brideo/brideo-magento2-scaffolding.git
+    cd brideo-magento2-scaffolding
+    composer install
+    
+I will create this package as a `.phar` at some point.
+
 ## Generate Module
 
     php src/application.php module:generate Brideo Example 1.0.0 brideo-example
@@ -81,5 +98,4 @@ It will also create:
 * Create constants for keys (probably within interfaces)
 * Improve directory structure
 * Inject ACL resource if `acl.xml` exists already
-* Abstract duplicate logic for Admin/Frontend controllers
 * Update `composer.json` with dependencies  

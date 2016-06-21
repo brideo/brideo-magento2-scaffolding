@@ -9,4 +9,23 @@ class Generate extends Base
         parent::_construct();
     }
 
+    /**
+     * Get any additional directories for the generation process;
+     *
+     * @return array
+     */
+    public function getAdditionalDirectories() : array
+    {
+        return [];
+    }
+
+    /**
+     * Get any additional files for the generation process;
+     *
+     * @return array
+     */
+    public function getAdditionalFiles() : array
+    {
+        return [];
+    }
 }

@@ -3,8 +3,8 @@
 namespace Brideo\Magento2Scaffolding\Command\Frontend;
 
 use Brideo\Magento2Scaffolding\Command\Base\Route;
-use Brideo\Magento2Scaffolding\Service\FrontendRoute;
 use Brideo\Magento2Scaffolding\Service\ServiceInterface;
+use \Brideo\Magento2Scaffolding\Service\Frontend\Route as ServiceRoute;
 
 class RouteCommand extends Route
 {
@@ -49,6 +49,6 @@ class RouteCommand extends Route
         string $directory
     ) : ServiceInterface
     {
-        return new FrontendRoute($namespace, $module, $frontName, $actionName, $version, $directory);
+        return new ServiceRoute($namespace, $module, $frontName, $actionName, $version, $directory);
     }
 }
