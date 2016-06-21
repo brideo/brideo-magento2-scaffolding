@@ -89,8 +89,6 @@ It will also create:
 
 ## Todo's:
 
-* Add Tests
-* Add Interfaces
 * Integrate into Magento 2's `bin/magento`
 * Add more data like Author
 * Remove `$directories` definition and just use files
