@@ -99,6 +99,24 @@ It will also create:
 
     $ ./brideo-example/src/Block/SomeBlock.php
 
+## Generate Adminhtml Template Block
+
+    php src/application.php module:adminhtml:block:template Brideo Example SomeBlock 1.0.0 brideo-example
+
+If the brideo-example doesn't exist yet, this will create:
+
+    $ ./brideo-example/src
+    $ ./brideo-example/src/registration.php
+    $ ./brideo-example/src/etc/module.xml
+    $ ./brideo-example/composer.json
+    $ ./brideo-example/.gitignore
+    $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
+
+It will also create:
+
+    $ ./brideo-example/src/Block/Adminhtml/SomeBlock.php
+
 ## Running Tests
  
     composer install
