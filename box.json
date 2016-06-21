@@ -1,0 +1,20 @@
+{
+  "chmod": "0755",
+  "extract": true,
+  "compactors": [
+    "Herrera\\Box\\Compactor\\Json"
+  ],
+  "directories": [
+    "src"
+  ],
+  "finder": [
+    {
+      "name": "/\\.(php|exe)/",
+      "in": "vendor"
+    }
+  ],
+  "git-version": "commit",
+  "main": "bin/brideo-magento2-scaffolding",
+  "output": "bin/brideo-magento2-scaffolding.phar",
+  "stub": true
+}

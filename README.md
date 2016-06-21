@@ -13,15 +13,13 @@ I recommend upgrading to PHP 7 if possible though.
 
 ## Installation
 
-    git clone git@github.com:brideo/brideo-magento2-scaffolding.git
-    cd brideo-magento2-scaffolding
-    composer install
+    wget https://dl.dropboxusercontent.com/u/42656369/brideo-magento2-scaffolding.phar
+    chmod +x brideo-magento2-scaffolding.phar
+    mv brideo-magento2-scaffolding.phar /usr/local/bin/brideo-magento2-scaffolding
     
-I will create this package as a `.phar` at some point.
-
 ## Generate Module
 
-    php src/application.php module:generate Brideo Example 1.0.0 brideo-example
+    brideo-magento2-scaffolding module:generate Brideo Example 1.0.0 brideo-example
 
 Will create:
 
@@ -36,7 +34,7 @@ Will create:
 
 ## Generate Admin Route
 
-    php src/application.php module:adminhtml:route Brideo Example Frontname Index 1.0.0 brideo-example
+    brideo-magento2-scaffolding module:adminhtml:route Brideo Example Frontname Index 1.0.0 brideo-example
 
 If the brideo-example doesn't exist yet, this will create:
 
@@ -61,7 +59,7 @@ It will also create:
 
 ## Generate Frontend Route
 
-    php src/application.php module:frontend:route Brideo Example Frontname Index 1.0.0 brideo-example
+    brideo-magento2-scaffolding module:frontend:route Brideo Example Frontname Index 1.0.0 brideo-example
 
 If the brideo-example doesn't exist yet, this will create:
 
@@ -83,7 +81,7 @@ It will also create:
 
 ## Generate Frontend Template Block
 
-    php src/application.php module:frontend:block:template Brideo Example SomeBlock 1.0.0 brideo-example
+    brideo-magento2-scaffolding module:frontend:block:template Brideo Example SomeBlock 1.0.0 brideo-example
 
 If the brideo-example doesn't exist yet, this will create:
 
@@ -101,7 +99,7 @@ It will also create:
 
 ## Generate Adminhtml Template Block
 
-    php src/application.php module:adminhtml:block:template Brideo Example SomeBlock 1.0.0 brideo-example
+    brideo-magento2-scaffolding module:adminhtml:block:template Brideo Example SomeBlock 1.0.0 brideo-example
 
 If the brideo-example doesn't exist yet, this will create:
 
