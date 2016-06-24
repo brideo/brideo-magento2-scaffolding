@@ -13,7 +13,7 @@ I recommend upgrading to PHP 7 if possible though.
 
 ## Installation
 
-    wget https://dl.dropboxusercontent.com/u/42656369/brideo-magento2-scaffolding.phar
+    wget http://www.brideo.co.uk/brideo-magento2-scaffolding.phar
     chmod +x brideo-magento2-scaffolding.phar
     mv brideo-magento2-scaffolding.phar /usr/local/bin/brideo-magento2-scaffolding
     
