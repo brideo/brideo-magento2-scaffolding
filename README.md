@@ -134,6 +134,24 @@ It will also create:
     $ ./brideo-example/src/Observer/AddHandles.php
     $ ./brideo-example/src/etc/events.xml
 
+## Generate an Model
+
+    brideo-magento2-scaffolding module:model Brideo Example MyModel 1.0.0 brideo-example
+    
+If the brideo-example doesn't exist yet, this will create:
+
+    $ ./brideo-example/src
+    $ ./brideo-example/src/registration.php
+    $ ./brideo-example/src/etc/module.xml
+    $ ./brideo-example/composer.json
+    $ ./brideo-example/.gitignore
+    $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
+
+It will also create:
+
+    $ ./brideo-example/src/Model/MyModel.php
+
 ## Running Tests
  
     composer install
