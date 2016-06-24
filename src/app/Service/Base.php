@@ -11,6 +11,7 @@ abstract class Base implements ServiceInterface
     const DIRECTORY_SRC = 'src';
     const DIRECTORY_CONFIG = 'etc';
     const DIRECTORY_TEST = 'Test/Unit';
+    const DIRECTORY_RESOURCE_MODEL = 'Model/ResourceModel';
 
     const FILE_COMPOSER = 'composer.json';
     const FILE_READ_ME = 'README.md';
@@ -369,5 +370,15 @@ abstract class Base implements ServiceInterface
     protected function getModuleTestTemplate() : string
     {
         return static::TEMPLATE_MODULE_TEST_FILE_SOURCE;
+    }
+
+    /**
+     * Get the resource model directory.
+     *
+     * @return string
+     */
+    protected function getResourceModelDirectory() : string
+    {
+        return $this->getSrcDirectory() . DIRECTORY_SEPARATOR . static::DIRECTORY_RESOURCE_MODEL;
     }
 }

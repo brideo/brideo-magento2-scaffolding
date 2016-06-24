@@ -12,7 +12,7 @@ class ModelCommand extends AbstractCommand
     const NAME = 'module:model';
     const DESCRIPTION = 'Generate a model.';
 
-    const IS_RESOURCE = true;
+    const IS_RESOURCE = false;
 
     protected function configure()
     {

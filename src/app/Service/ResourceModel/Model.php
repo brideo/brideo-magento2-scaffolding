@@ -7,12 +7,10 @@ use Brideo\Magento2Scaffolding\Service\Base;
 /**
  * Class Model
  *
- * @package Brideo\Magento2Scaffolding\Service
+ * @package Brideo\Magento2Scaffolding\Service\ResourceModel
  */
 class Model extends Base
 {
-
-    const DIRECTORY_MODEL = 'Model/ResourceModel';
 
     const TEMPLATE_RESOURCE_MODEL_TEMPLATE_SOURCE = 'src/Model/ResourceModel/Model.phtml';
 
@@ -57,16 +55,6 @@ class Model extends Base
         return [
             $this->getResourceModelTemplate() => $this->getResourceModelFile(),
         ];
-    }
-
-    /**
-     * Get the resource model directory.
-     *
-     * @return string
-     */
-    protected function getResourceModelDirectory() : string
-    {
-        return $this->getSrcDirectory() . DIRECTORY_SEPARATOR . static::DIRECTORY_MODEL;
     }
 
     /**
