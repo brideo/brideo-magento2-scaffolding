@@ -134,7 +134,7 @@ It will also create:
     $ ./brideo-example/src/Observer/AddHandles.php
     $ ./brideo-example/src/etc/events.xml
 
-## Generate an Model
+## Generate a Model
 
     brideo-magento2-scaffolding module:model Brideo Example MyModel 1.0.0 brideo-example
     
@@ -152,7 +152,7 @@ It will also create:
 
     $ ./brideo-example/src/Model/MyModel.php
     
-## Generate an Model
+## Generate a Resource Model
 
     brideo-magento2-scaffolding module:resource-model Brideo Example MyModel 1.0.0 brideo-example
     
