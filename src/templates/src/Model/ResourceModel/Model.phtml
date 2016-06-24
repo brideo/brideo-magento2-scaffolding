@@ -1,0 +1,27 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+echo '<?php'
+?>
+
+
+namespace <?php echo $block->getData('namespace'); ?>\Model\ResourceModel;
+
+/**
+ * Class <?php echo $block->getData('class_name'); ?>
+
+ *
+ * @package <?php echo $block->getData('namespace'); ?>\Model\ResourceModel
+ */
+class <?php echo $block->getData('class_name'); ?> extends \Magento\Framework\Model\AbstractModel
+{
+    /**
+     * Initialize resource model
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init('<?php echo $block->namespace_module(); ?>', 'entity_id');
+    }
+
+}
