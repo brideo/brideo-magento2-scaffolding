@@ -1,0 +1,41 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+echo '<?php'
+?>
+
+
+namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model;
+
+/**
+ * Class <?php echo $block->getData('class_name') ?>
+<?php if($block->getData('is_resource')): ?>
+ *
+ *
+ * @method \<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('model') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>_getResource()
+<?php endif; ?>
+ *
+ * @package <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('model') ?>\Model
+ */
+class <?php echo $block->getData('class_name') ?> extends \Magento\Framework\Model\AbstractModel
+{
+
+    /**
+     * Prefix of model events names
+     *
+     * @var string
+     */
+    protected $_eventPrefix = '<?php echo $block->namespace_module() ?>';
+
+<?php if($block->getData('is_resource')): ?>
+    /**
+     * Initialize resource model
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init('<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>');
+    }
+
+<?php endif; ?>
+}

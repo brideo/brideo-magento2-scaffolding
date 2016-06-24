@@ -2,17 +2,17 @@
 
 namespace Brideo\Magento2Scaffolding\Command;
 
-use Brideo\Magento2Scaffolding\Service\Observer;
+use Brideo\Magento2Scaffolding\Service\Model;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ObserverCommand extends AbstractCommand
+class ModelCommand extends AbstractCommand
 {
-    const NAME = 'module:observer';
-    const DESCRIPTION = 'Generate an observer.';
-    const EVENT_NAME = 'event_name';
-    const EVENT_DESCRIPTION = 'The name of the event to observe.';
+    const NAME = 'module:model';
+    const DESCRIPTION = 'Generate a model.';
+
+    const IS_RESOURCE = true;
 
     protected function configure()
     {
@@ -21,11 +21,6 @@ class ObserverCommand extends AbstractCommand
                 static::CLASS_NAME,
                 InputArgument::REQUIRED,
                 static::CLASS_DESCRIPTION
-            )
-            ->addArgument(
-                static::EVENT_NAME,
-                InputArgument::REQUIRED,
-                static::EVENT_DESCRIPTION
             );
 
         $this->addDefaultOptionalArguments();
@@ -35,9 +30,9 @@ class ObserverCommand extends AbstractCommand
     {
         list($namespace, $module, $version, $directory) = $this->getBaseArguments($input);
         $className = $input->getArgument(static::CLASS_NAME);
-        $eventName = $input->getArgument(static::EVENT_NAME);
 
-        $observerService = new Observer($namespace, $module,$className, $eventName, $version, $directory);
-        $observerService->generate();
+        $modelService = new Model($namespace, $module, $className, static::IS_RESOURCE, $version, $directory);
+        $modelService->generate();
     }
+
 }

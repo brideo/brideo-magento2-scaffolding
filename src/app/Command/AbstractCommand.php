@@ -18,6 +18,9 @@ abstract class AbstractCommand extends Command
     const MODULE_DIRECTORY = 'directory';
     const MODULE_DIRECTORY_DESCRIPTION = 'The name of the directory you would like the module to install into.';
 
+    const CLASS_NAME = 'class_name';
+    const CLASS_DESCRIPTION = 'The name of the class to generate.';
+
     /**
      * Helper method to easily create the base command used for
      * module generation.
