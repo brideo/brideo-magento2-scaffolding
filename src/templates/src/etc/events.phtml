@@ -1,0 +1,7 @@
+<?php /** @var Brideo\Magento2Scaffolding\Block\File $block */ ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="<?php echo $block->getData('event_name') ?>">
+        <observer name="<?php echo $block->namespace_module() ?>_<?php echo strtolower($block->getData('event_name')) ?>" instance="<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Observer\<?php echo $block->getData('class_name') ?>" />
+    </event>
+</config>

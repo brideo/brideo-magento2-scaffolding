@@ -115,6 +115,25 @@ It will also create:
 
     $ ./brideo-example/src/Block/Adminhtml/SomeBlock.php
 
+## Generate an observer
+
+    brideo-magento2-scaffolding module:observer Brideo Example AddHandles layout_load_before 1.0.0 brideo-example
+    
+If the brideo-example doesn't exist yet, this will create:
+
+    $ ./brideo-example/src
+    $ ./brideo-example/src/registration.php
+    $ ./brideo-example/src/etc/module.xml
+    $ ./brideo-example/composer.json
+    $ ./brideo-example/.gitignore
+    $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
+
+It will also create:
+
+    $ ./brideo-example/src/Observer/AddHandles.php
+    $ ./brideo-example/src/etc/events.xml
+
 ## Running Tests
  
     composer install
@@ -130,3 +149,4 @@ It will also create:
 * Improve directory structure
 * Inject ACL resource if `acl.xml` exists already
 * Update `composer.json` with dependencies  
+* Design `scaffolding.xml` for configuration

@@ -18,32 +18,10 @@ class GenerateCommand extends AbstractCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $namespace = $input->getArgument(static::MODULE_NAMESPACE);
-        $module = $input->getArgument(static::MODULE_NAME);
-        $version = $this->getVersion($input);
-        $directory = $this->getModuleDirectory($input);
+        list($namespace, $module, $version, $directory) = $this->getBaseArguments($input);
 
         $generate = new Generate($namespace, $module, $version, $directory);
         $generate->generate();
     }
 
-    protected function getVersion(InputInterface $input)
-    {
-        $version = $input->getArgument(static::MODULE_VERSION);
-        if (!$version) {
-            $version = '1.0.0';
-        }
-
-        return $version;
-    }
-
-    protected function getModuleDirectory(InputInterface $input)
-    {
-        $directory = $input->getArgument(static::MODULE_DIRECTORY);
-        if (!$directory) {
-            $directory = false;
-        }
-
-        return $directory;
-    }
 }

@@ -72,12 +72,9 @@ abstract class Route extends AbstractCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $namespace = $input->getArgument(static::MODULE_NAMESPACE);
-        $module = $input->getArgument(static::MODULE_NAME);
+        list($namespace, $module, $version, $directory) = $this->getBaseArguments($input);
         $frontName = $input->getArgument(static::FRONT_NAME);
         $actionName = $input->getArgument(static::ACTION_NAME);
-        $version = $this->getVersion($input);
-        $directory = $this->getModuleDirectory($input);
 
         $service = $this->getService($namespace, $module, $frontName, $actionName, $version, $directory);
         $service->generate();

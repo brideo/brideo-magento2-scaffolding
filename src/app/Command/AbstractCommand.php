@@ -79,4 +79,21 @@ abstract class AbstractCommand extends Command
 
         return $directory;
     }
+
+    /**
+     * Get the base arguments.
+     *
+     * @param InputInterface $input
+     *
+     * @return array
+     */
+    protected function getBaseArguments(InputInterface $input)
+    {
+        $namespace = $input->getArgument(static::MODULE_NAMESPACE);
+        $module = $input->getArgument(static::MODULE_NAME);
+        $version = $this->getVersion($input);
+        $directory = $this->getModuleDirectory($input);
+
+        return array($namespace, $module, $version, $directory);
+    }
 }

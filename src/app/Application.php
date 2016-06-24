@@ -7,6 +7,7 @@ use Brideo\Magento2Scaffolding\Command\Adminhtml\TemplateBlockCommand as AdminTe
 use Brideo\Magento2Scaffolding\Command\GenerateCommand;
 use Brideo\Magento2Scaffolding\Command\Adminhtml\RouteCommand as AdminRoute;
 use Brideo\Magento2Scaffolding\Command\Frontend\RouteCommand as FrontendRoute;
+use Brideo\Magento2Scaffolding\Command\ObserverCommand;
 use Symfony\Component\Console\Application as SymfonyApplication;
 
 class Application
@@ -48,6 +49,7 @@ class Application
         $this->application->add(new FrontendRoute());
         $this->application->add(new FrontendTemplateBlock());
         $this->application->add(new AdminTemplateBlock());
+        $this->application->add(new ObserverCommand());
 
         return $this;
     }

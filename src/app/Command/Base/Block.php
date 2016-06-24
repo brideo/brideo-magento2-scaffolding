@@ -62,11 +62,8 @@ abstract class Block extends AbstractCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $namespace = $input->getArgument(static::MODULE_NAMESPACE);
-        $module = $input->getArgument(static::MODULE_NAME);
+        list($namespace, $module, $version, $directory) = $this->getBaseArguments($input);
         $blockName = $input->getArgument(static::BLOCK_NAME);
-        $version = $this->getVersion($input);
-        $directory = $this->getModuleDirectory($input);
 
         $service = $this->getService($namespace, $module, $blockName, $version, $directory);
         $service->generate();
