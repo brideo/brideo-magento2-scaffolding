@@ -228,6 +228,9 @@ We will also have a table called `brideo_example` which looks like this.
 
 ## Scaffold Command
 
+
+    brideo-magento2-scaffolding module:scaffold Brideo Example Blog brideo_blog "title:string description:string author:string" 1.0.0 brideo-example
+
 Often we need to create entities in Magento, like the rails scaffold cli command I am attempting to make a module which builds the boiler plate Magento files so you can get up and running quickly.
 
 This command will create and link:
@@ -248,8 +251,6 @@ This command will create and link:
 * Frontend layout XML 
 * Frontend template (Outputting entities)
 
-
-    brideo-magento2-scaffolding module:scaffold Brideo Example Blog brideo_blog "title:string description:string author:string" 1.0.0 brideo-example
 
 The files this command will create are (this command will never overwrite existing files):
 
