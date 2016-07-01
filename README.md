@@ -1,5 +1,7 @@
 # Brideo Magento 2 Scaffolding
 
+[![Build Status](https://travis-ci.org/brideo/brideo-magento2-scaffolding.svg?branch=master)](https://travis-ci.org/brideo/brideo-magento2-scaffolding)
+
 This module is still a hack project of mind and is far from completion. The aim of this project is to be able to build a CLI tool to help create boiler plate Magento 2 files with a good amount of test coverage.
 
 ## Requirements
