@@ -66,7 +66,7 @@ class Collection extends Base
      */
     protected function getCollectionDirectory() : string
     {
-        return $this->getCollectionFile() . DIRECTORY_SEPARATOR . $this->data['class_name'];
+        return $this->getResourceModelDirectory() . DIRECTORY_SEPARATOR . $this->data['class_name'];
     }
 
     /**
@@ -76,7 +76,7 @@ class Collection extends Base
      */
     protected function getCollectionFile() : string
     {
-        return $this->getResourceModelDirectory(). DIRECTORY_SEPARATOR . static::FILE_COLLECTION;
+        return $this->getCollectionDirectory(). DIRECTORY_SEPARATOR . static::FILE_COLLECTION;
     }
 
 

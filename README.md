@@ -169,6 +169,29 @@ If the brideo-example doesn't exist yet, this will create:
 It will also create:
 
     $ ./brideo-example/src/Model/ResourceModel/MyModel.php
+    
+
+## Generate a Collection
+
+    brideo-magento2-scaffolding module:collection Brideo Example MyModel 1.0.0 brideo-example
+
+If you don't have a resource model and model yet, this command will generate those for you.
+
+If the brideo-example doesn't exist yet, this will create:
+
+    $ ./brideo-example/src
+    $ ./brideo-example/src/registration.php
+    $ ./brideo-example/src/etc/module.xml
+    $ ./brideo-example/composer.json
+    $ ./brideo-example/.gitignore
+    $ ./brideo-example/README.md
+    $ ./brideo-example/Test/Unit/ModuleTest.php
+    $ ./brideo-example/src/Model/MyModel.php
+    $ ./brideo-example/src/Model/ResourceModel/MyModel.php
+
+It will also create:
+
+    $ ./brideo-example/src/Model/ResourceModel/MyModel/Collection.php
 
 ## Running Tests
  
