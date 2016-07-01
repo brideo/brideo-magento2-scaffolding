@@ -137,6 +137,17 @@ abstract class Base implements ServiceInterface
     }
 
     /**
+     * Allow data to be set.
+     *
+     * @param $key
+     * @param $value
+     */
+    public function setData($key, $value)
+    {
+        $this->data[$key] = $value;
+    }
+
+    /**
      * Get the template file path
      *
      * @param $file

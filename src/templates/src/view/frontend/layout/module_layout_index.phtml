@@ -4,6 +4,6 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceContainer name="content">
-        <block class="Magento\Framework\View\Element\Template" name="<?php echo $block->namespace_module_frontname_action() ?>" template="<?php echo $block->template_name() ?>" />
+        <block class="<?php echo $block->blockClass('Magento\Framework\View\Element\Template') ?>" name="<?php echo $block->namespace_module_frontname_action() ?>" template="<?php echo $block->template_name() ?>" />
     </referenceContainer>
 </page>

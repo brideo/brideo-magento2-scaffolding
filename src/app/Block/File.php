@@ -80,10 +80,6 @@ class File extends DataObject
             return $this->getData('table_name');
         }
 
-        if ($this->getData('class_name')) {
-            return $this->namespace_module() . '_' . strtolower($this->getData('class_name'));
-        }
-
         return $this->namespace_module();
     }
 
@@ -128,6 +124,15 @@ class File extends DataObject
         }
 
         return $this->typeMapping;
+    }
+
+    public function blockClass($default)
+    {
+        if($this->getData('block_class')) {
+            return $this->getData('block_class');
+        }
+
+        return $default;
     }
 
 }

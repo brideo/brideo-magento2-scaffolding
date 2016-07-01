@@ -21,14 +21,21 @@ class InstallSchema extends Base
      * @param array       $columns
      * @param string      $version
      * @param string|null $directory
+     * @param string      $tableName
      */
     public function __construct(
         string $namespace,
         string $module,
         array $columns,
         string $version = '1.0.0',
-        string $directory = null
+        string $directory = null,
+        string $tableName = null
     ) {
+
+        if ($tableName) {
+            $this->data['table_name'] = $tableName;
+        }
+
         $this->data['columns'] = $columns;
         parent::__construct($namespace, $module, $version, $directory);
     }
