@@ -4,7 +4,7 @@ echo '<?php'
 ?>
 
 
-namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Test\Unit\Controller\<?php echo $block->getData('front_name') ?>;
+namespace <?php echo $block->NamespaceModule() ?>\Test\Unit\Controller\<?php echo $block->getData('front_name') ?>;
 
 use PHPUnit_Framework_TestCase;
 
@@ -12,7 +12,7 @@ class <?php echo $block->getData('action_name') ?>Test extends PHPUnit_Framework
 {
 
     /**
-     * @var  \<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>;
+     * @var  \<?php echo $block->NamespaceModule() ?>\Controller\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>;
      */
     protected $controller;
 
@@ -36,7 +36,7 @@ class <?php echo $block->getData('action_name') ?>Test extends PHPUnit_Framework
 
         /** @var \Magento\Framework\App\Action\Context $context */
         /** @var \Magento\Framework\View\Result\PageFactory $pageFactory */
-        $this->controller = new \<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Controller\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>($context, $pageFactory);
+        $this->controller = new \<?php echo $block->NamespaceModule() ?>\Controller\<?php echo $block->getData('front_name') ?>\<?php echo $block->getData('action_name') ?>($context, $pageFactory);
     }
 
     protected function tearDown()

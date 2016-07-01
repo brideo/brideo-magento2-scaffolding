@@ -4,14 +4,14 @@ echo '<?php'
 ?>
 
 
-namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>;
+namespace <?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>;
 
 /**
  * Class Collection
  *
- * @method <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?> _getResource()
+ * @method <?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?> _getResource()
  *
- * @package <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>
+ * @package <?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>
 
  */
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
@@ -29,7 +29,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\<?php echo $block->getData('class_name') ?>', '<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>');
+        $this->_init('<?php echo $block->NamespaceModule() ?>\Model\<?php echo $block->getData('class_name') ?>', '<?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>');
 
         return $this;
     }

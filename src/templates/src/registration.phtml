@@ -5,6 +5,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    '<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>',
+    '<?php echo $block->namespace_module(false) ?>',
     __DIR__
 );
