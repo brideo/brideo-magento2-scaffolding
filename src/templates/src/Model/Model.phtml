@@ -4,7 +4,7 @@ echo '<?php'
 ?>
 
 
-namespace <?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model;
+namespace <?php echo $block->NamespaceModule() ?>\Model;
 
 /**
  * Class <?php echo $block->getData('class_name') ?>
@@ -34,7 +34,7 @@ class <?php echo $block->getData('class_name') ?> extends \Magento\Framework\Mod
      */
     protected function _construct()
     {
-        $this->_init('<?php echo $block->getData('namespace') ?>\<?php echo $block->getData('module') ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>');
+        $this->_init('<?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('class_name') ?>');
     }
 
 <?php endif; ?>

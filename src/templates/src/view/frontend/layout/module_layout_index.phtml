@@ -1,43 +1,9 @@
 <?php
 /** @var Brideo\Magento2Scaffolding\Block\File $block */
-
-/**
- * Class FrontendHelper
- *
- * @TODO: Move this monstrosity
- */
-class FrontendHelper
-{
-
-    /**
-     * Dirty helper function.
-     *
-     * @param \Brideo\Magento2Scaffolding\Block\File $block
-     *
-     * @return string
-     */
-    static public function getName(Brideo\Magento2Scaffolding\Block\File $block)
-    {
-        return strtolower($block->getData('namespace') . '_' . $block->getData('module') . '_' . $block->getData('front_name') . '_' . $block->getData('action_name'));
-    }
-
-    /**
-     * Dirty helper function.
-     *
-     * @param \Brideo\Magento2Scaffolding\Block\File $block
-     *
-     * @return string
-     */
-    static public function getTemplate(Brideo\Magento2Scaffolding\Block\File $block)
-    {
-        return $block->getData('namespace') . '_' . $block->getData('module') . '::' . strtolower($block->getData('front_name') . '/' . $block->getData('action_name')) . '.phtml';
-    }
-}
-
 ?>
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceContainer name="content">
-        <block class="Magento\Framework\View\Element\Template" name="<?php echo FrontendHelper::getName($block) ?>" template="<?php echo FrontendHelper::getTemplate($block) ?>" />
+        <block class="Magento\Framework\View\Element\Template" name="<?php echo $block->namespace_module_frontname_action() ?>" template="<?php echo $block->template_name() ?>" />
     </referenceContainer>
 </page>

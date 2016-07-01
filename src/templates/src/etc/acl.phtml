@@ -5,7 +5,7 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Backend::content">
-                    <resource id="<?php echo $block->getData('namespace') ?>_<?php echo $block->getData('module') ?>::<?php echo strtolower($block->getData('front_name') .'_'. $block->getData('action_name')) ?>" title="<?php echo $block->getData('namespace') ?> <?php echo $block->getData('module') ?> <?php echo $block->getData('front_name') ?> <?php echo $block->getData('action_name') ?>" sortOrder="10"/>
+                    <resource id="<?php echo $block->namespace_module(false) ?>::<?php echo strtolower($block->getData('front_name') .'_'. $block->getData('action_name')) ?>" title="<?php echo $block->namespace_module(false) ?> <?php echo $block->getData('front_name') ?> <?php echo $block->getData('action_name') ?>" sortOrder="10"/>
                 </resource>
             </resource>
         </resources>

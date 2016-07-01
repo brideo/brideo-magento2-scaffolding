@@ -4,13 +4,13 @@ echo '<?php'
 ?>
 
 
-namespace <?php echo $block->getData('namespace'); ?>\Model\ResourceModel;
+namespace <?php echo $block->NamespaceModule(); ?>\Model\ResourceModel;
 
 /**
  * Class <?php echo $block->getData('class_name'); ?>
 
  *
- * @package <?php echo $block->getData('namespace'); ?>\Model\ResourceModel
+ * @package <?php echo $block->NamespaceModule(); ?>\Model\ResourceModel
  */
 class <?php echo $block->getData('class_name'); ?> extends \Magento\Framework\Model\AbstractModel
 {
@@ -21,7 +21,7 @@ class <?php echo $block->getData('class_name'); ?> extends \Magento\Framework\Mo
      */
     protected function _construct()
     {
-        $this->_init('<?php echo $block->namespace_module(); ?>', 'entity_id');
+        $this->_init('<?php echo $block->table_name() ?>', 'entity_id');
     }
 
 }
