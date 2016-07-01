@@ -2,10 +2,17 @@
 
 namespace Brideo\Magento2Scaffolding\Block;
 
+use Brideo\Magento2Scaffolding\Helper\TypeMapping;
+
 class File extends DataObject
 {
 
     private $fileName;
+
+    /**
+     * @var TypeMapping
+     */
+    protected $typeMapping;
 
     /**
      * File constructor.
@@ -95,5 +102,32 @@ class File extends DataObject
         return $this->namespace_module(false) . '::' . strtolower($this->getData('front_name') . '/' . $this->getData('action_name')) . '.phtml';
     }
 
+    /**
+     * @param $type
+     *
+     * @return string
+     */
+    public function TableType($type) : string
+    {
+        try {
+            return $this->getTypeMapping()->getStaticBinding($type);
+        }  catch (\Exception $e) {
+            // Should log here.
+        }
+
+        return "'".$type."'";
+    }
+
+    /**
+     * @return TypeMapping
+     */
+    public function getTypeMapping()
+    {
+        if (!$this->typeMapping) {
+            $this->typeMapping = new TypeMapping();
+        }
+
+        return $this->typeMapping;
+    }
 
 }

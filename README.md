@@ -195,6 +195,37 @@ It will also create:
 
     $ ./brideo-example/src/Model/ResourceModel/MyModel/Collection.php
 
+## Generate a Setup Script
+
+    brideo-magento2-scaffolding module:setup:install Brideo Example brideo_example "name:string title:string content:text foreign:int" 1.0.0 brideo-example
+
+If you don't have a resource model and model yet, this command will generate those for you.
+
+If the brideo-example doesn't exist yet, this will create:
+
+    $ ./brideo-example/src
+    $ ./brideo-example/src/registration.php
+    $ ./brideo-example/src/etc/module.xml
+    $ ./brideo-example/composer.json
+    $ ./brideo-example/.gitignore
+    $ ./brideo-example/README.md
+
+It will also create:
+
+    $ ./brideo-example/src/Model/Setup/InstallSchema.php
+
+We will also now have a table like this:
+
+    +-----------+-------------+------+-----+---------+----------------+
+    | Field     | Type        | Null | Key | Default | Extra          |
+    +-----------+-------------+------+-----+---------+----------------+
+    | entity_id | smallint(6) | NO   | PRI | NULL    | auto_increment |
+    | name      | text        | YES  |     | NULL    |                |
+    | title     | text        | YES  |     | NULL    |                |
+    | content   | text        | YES  |     | NULL    |                |
+    | foreign   | int(11)     | YES  |     | NULL    |                |
+    +-----------+-------------+------+-----+---------+----------------+
+
 ## Running Tests
  
     composer install
