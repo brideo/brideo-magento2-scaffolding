@@ -2,15 +2,19 @@
 
 namespace Brideo\Magento2Scaffolding\Command\ResourceModel\Model;
 
+use Brideo\Magento2Scaffolding\Command\AbstractCommand;
 use Brideo\Magento2Scaffolding\Command\AbstractScaffold;
+use Brideo\Magento2Scaffolding\Service\Model;
+use Brideo\Magento2Scaffolding\Service\ResourceModel\Model as ResourceModel;
+use Brideo\Magento2Scaffolding\Service\ResourceModel\Model\Collection;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class CollectionCommand extends AbstractScaffold
 {
-    const NAME = 'module:collection';
-    const DESCRIPTION = 'Generate a collection, model and resource model.';
+    const NAME = 'module:scaffold';
+    const DESCRIPTION = 'Generate a collection, model, resource model and an install script.';
 
     const IS_RESOURCE = true;
 
