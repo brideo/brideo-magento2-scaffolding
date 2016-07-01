@@ -22,15 +22,21 @@ class Model extends Base
      * @param string      $className
      * @param string      $version
      * @param string|null $directory
+     * @param string      $tableName
      */
     public function __construct(
         string $namespace,
         string $module,
         string $className,
         string $version = '1.0.0',
-        string $directory = null
+        string $directory = null,
+        string $tableName = null
     )
     {
+        if($tableName) {
+            $this->data['table_name'] = $tableName;
+        }
+
         $this->data['class_name'] = $className;
         parent::__construct($namespace, $module, $version, $directory);
     }

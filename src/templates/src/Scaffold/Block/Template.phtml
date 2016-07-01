@@ -1,0 +1,37 @@
+<?php
+/** @var Brideo\Magento2Scaffolding\Block\File $block */
+?>
+<?php echo '<?php' ?>
+
+
+namespace <?php echo $block->NamespaceModule() ?> \Block;
+
+class <?php echo $block->getData('block_name') ?> extends \Magento\Framework\View\Element\Template
+{
+
+    /**
+     * @var \<?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('block_name') ?>\CollectionFactory
+     */
+    protected $collectionFactory;
+
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        \<?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('block_name') ?>\CollectionFactory $collectionFactory,
+        array $data)
+    {
+
+        parent::__construct($context, $data);
+        $this->collectionFactory = $collectionFactory;
+    }
+
+    /**
+     * @return \<?php echo $block->NamespaceModule() ?>\Model\ResourceModel\<?php echo $block->getData('block_name') ?>\CollectionFactory $collectionFactory,
+     */
+    public function getCollection()
+    {
+        $collection = $this->collectionFactory->create();
+
+        return $collection->getData();
+    }
+
+}

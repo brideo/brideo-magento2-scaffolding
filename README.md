@@ -214,7 +214,7 @@ It will also create:
 
     $ ./brideo-example/src/Model/Setup/InstallSchema.php
 
-We will also now have a table like this:
+We will also have a table called `brideo_example` which looks like this.
 
     +-----------+-------------+------+-----+---------+----------------+
     | Field     | Type        | Null | Key | Default | Extra          |
@@ -226,19 +226,75 @@ We will also now have a table like this:
     | foreign   | int(11)     | YES  |     | NULL    |                |
     +-----------+-------------+------+-----+---------+----------------+
 
+## Scaffold Command
+
+Often we need to create entities in Magento, like the rails scaffold cli command I am attempting to make a module which builds the boiler plate Magento files so you can get up and running quickly.
+
+This command will create and link:
+
+* Module definition including `composer.json`
+* Models
+* Resource Models
+* Collections
+* Setup scripts 
+* Blocks
+* Config XML
+* Admin Routes
+* Admin XML
+* ACL XML
+* Unit Tests
+* Admin template file (Not adminhtml yet)
+* Frontend Routes
+* Frontend layout XML 
+* Frontend template (Outputting entities)
+
+
+    brideo-magento2-scaffolding module:scaffold Brideo Example Blog brideo_blog "title:string description:string author:string" 1.0.0 brideo-example
+
+The files this command will create are (this command will never overwrite existing files):
+
+	$ ./brideo-example/README.md
+	$ ./brideo-example/composer.json
+	$ ./brideo-example/src/Adminhtml/Block/Blog.php
+	$ ./brideo-example/src/Block/Blog.php
+	$ ./brideo-example/src/Controller/Adminhtml/Blog/Index.php
+	$ ./brideo-example/src/Controller/Blog/Index.php
+	$ ./brideo-example/src/Model/Blog.php
+	$ ./brideo-example/src/Model/ResourceModel/Blog.php
+	$ ./brideo-example/src/Model/ResourceModel/Blog/Collection.php
+	$ ./brideo-example/src/Setup/InstallSchema.php
+	$ ./brideo-example/src/Test/Unit/Controller/Adminhtml/IndexTest.php
+	$ ./brideo-example/src/Test/Unit/Controller/IndexTest.php
+	$ ./brideo-example/src/Test/Unit/ModuleTest.php
+	$ ./brideo-example/src/etc/acl.xml
+	$ ./brideo-example/src/etc/adminhtml/routes.xml
+	$ ./brideo-example/src/etc/frontend/routes.xml
+	$ ./brideo-example/src/etc/module.xml
+	$ ./brideo-example/src/registration.php
+	$ ./brideo-example/src/view/adminhtml/layout/brideo_example_blog_index.xml
+	$ ./brideo-example/src/view/adminhtml/templates/blog/index.phtml
+	$ ./brideo-example/src/view/frontend/layout/brideo_example_blog_index.xml
+	$ ./brideo-example/src/view/frontend/templates/blog/index.phtml
+
+This command will also create a table like this:
+
+    +-------------+-------------+------+-----+---------+----------------+
+    | Field       | Type        | Null | Key | Default | Extra          |
+    +-------------+-------------+------+-----+---------+----------------+
+    | entity_id   | smallint(6) | NO   | PRI | NULL    | auto_increment |
+    | title       | text        | YES  |     | NULL    |                |
+    | description | text        | YES  |     | NULL    |                |
+    | author      | text        | YES  |     | NULL    |                |
+    +-------------+-------------+------+-----+---------+----------------+
+
+This command is still in development, if you're interested in contributing the things I am going to achieve are:
+
+* adminhtml for the entity created
+* injection of nodes in pre-existing XML files
+* tests for every php file created (can even be blank)
+
 ## Running Tests
  
     composer install
     vendor/bin/phpunit src/app/Test
 
-## Todo's:
-
-* Integrate into Magento 2's `bin/magento`
-* Add more data like Author
-* Remove `$directories` definition and just use files
-* Remove dirty helper functions in views.
-* Create constants for keys (probably within interfaces)
-* Improve directory structure
-* Inject ACL resource if `acl.xml` exists already
-* Update `composer.json` with dependencies  
-* Design `scaffolding.xml` for configuration

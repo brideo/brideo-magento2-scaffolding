@@ -1,7 +1,8 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Command;
+namespace Brideo\Magento2Scaffolding\Command\Setup;
 
+use Brideo\Magento2Scaffolding\Command\AbstractScaffold;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -32,10 +33,11 @@ class InstallSchemaCommand extends AbstractScaffold
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         list($namespace, $module, $version, $directory) = $this->getBaseArguments($input);
+        $tableName = $input->getArgument(static::TABLE_NAME);
 
 
         $columns = $this->getColumnNamesToArray($input, $output);
-        $this->createInstallSchema($namespace, $module, $columns, $version, $directory);
+        $this->createInstallSchema($namespace, $module, $columns, $version, $directory, $tableName);
     }
 
 }

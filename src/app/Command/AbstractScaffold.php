@@ -3,6 +3,11 @@
 namespace Brideo\Magento2Scaffolding\Command;
 
 
+use Brideo\Magento2Scaffolding\Helper\TypeMapping;
+use Brideo\Magento2Scaffolding\Service\Adminhtml\TemplateBlock as AdminBlock;
+use Brideo\Magento2Scaffolding\Service\Scaffold\Frontend\Route as FrontendRoute;
+use Brideo\Magento2Scaffolding\Service\Adminhtml\Route as AdminRoute;
+use Brideo\Magento2Scaffolding\Service\Scaffold\Frontend\TemplateBlock as FrontendBlock;
 use Brideo\Magento2Scaffolding\Service\Model;
 use Brideo\Magento2Scaffolding\Service\ResourceModel\Model as ResourceModel;
 use Brideo\Magento2Scaffolding\Service\ResourceModel\Model\Collection;
@@ -13,6 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 abstract class AbstractScaffold extends AbstractCommand
 {
 
+    const IS_RESOURCE = true;
 
     const TABLE_NAME = 'table_name';
     const TABLE_NAME_DESCRIPTION = 'The name of the table you would like to create';
@@ -28,16 +34,18 @@ abstract class AbstractScaffold extends AbstractCommand
      * @param string $className
      * @param string $version
      * @param string $directory
+     * @param string $tableName
      */
     protected function createResourceModel(
         string $namespace,
         string $module,
         string $className,
         string $version,
-        string $directory
+        string $directory,
+        string $tableName = null
     )
     {
-        $resourceModelService = new ResourceModel($namespace, $module, $className, $version, $directory);
+        $resourceModelService = new ResourceModel($namespace, $module, $className, $version, $directory, $tableName);
         $resourceModelService->generate();
     }
 
@@ -129,17 +137,73 @@ abstract class AbstractScaffold extends AbstractCommand
     }
 
     /**
-     * Create Install Schema.
+     * Create install schema
      *
-     * @param $namespace
-     * @param $module
-     * @param $columns
-     * @param $version
-     * @param $directory
+     * @param string      $namespace
+     * @param string      $module
+     * @param array       $columns
+     * @param string      $version
+     * @param string|null $directory
+     * @param string|null $tableName
      */
-    protected function createInstallSchema($namespace, $module, $columns, $version, $directory)
+    protected function createInstallSchema(
+        string $namespace,
+        string $module,
+        array $columns,
+        string $version = '1.0.0',
+        string $directory = null,
+        string $tableName = null
+    )
     {
-        $schemaService = new InstallSchema($namespace, $module, $columns, $version, $directory);
+        $schemaService = new InstallSchema($namespace, $module, $columns, $version, $directory, $tableName);
         $schemaService->generate();
+    }
+
+    /**
+     * @param string      $namespace
+     * @param string      $module
+     * @param string      $version
+     * @param string|null $directory
+     * @param string      $blockName
+     */
+    protected function createBlocks(
+        string $namespace,
+        string $module,
+        string $version = '1.0.0',
+        string $directory = null,
+        string $blockName
+    )
+    {
+        $adminBlockService = new AdminBlock($namespace, $module, $version, $directory, $blockName);
+        $adminBlockService->generate();
+
+        $frontendBlockService = new FrontendBlock($namespace, $module, $version, $directory, $blockName);
+        $frontendBlockService->generate();
+    }
+
+    /**
+     * @param string      $namespace
+     * @param string      $module
+     * @param string      $frontName
+     * @param string      $actionName
+     * @param string      $version
+     * @param string|null $directory
+     */
+    protected function createControllers(
+        string $namespace,
+        string $module,
+        string $frontName,
+        string $actionName,
+        string $version = '1.0.0',
+        string $directory = null
+    )
+    {
+        $adminRoute = new AdminRoute($namespace, $module, $frontName, $actionName, $version, $directory);
+        $adminRoute->setData('block_class', $namespace.'\\'.$module.'\\Block\\Adminhtml\\'.$frontName);
+        $adminRoute->generate();
+
+        $frontendRoute = new FrontendRoute($namespace, $module, $frontName, $actionName, $version, $directory);
+        $frontendRoute->setData('block_class', $namespace.'\\'.$module.'\\Block\\'.$frontName);
+        $frontendRoute->generate();
     }
 }
