@@ -11,6 +11,7 @@ use Brideo\Magento2Scaffolding\Command\ModelCommand;
 use Brideo\Magento2Scaffolding\Command\ResourceModel\Model\CollectionCommand;
 use Brideo\Magento2Scaffolding\Command\ResourceModel\ModelCommand as ResourceModel;
 use Brideo\Magento2Scaffolding\Command\ObserverCommand;
+use Brideo\Magento2Scaffolding\Command\InstallSchemaCommand;
 use Symfony\Component\Console\Application as SymfonyApplication;
 
 class Application
@@ -56,6 +57,7 @@ class Application
         $this->application->add(new ModelCommand());
         $this->application->add(new ResourceModel());
         $this->application->add(new CollectionCommand());
+        $this->application->add(new InstallSchemaCommand());
 
         return $this;
     }

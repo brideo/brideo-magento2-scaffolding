@@ -28,7 +28,7 @@ class InstallSchema implements InstallSchemaInterface
         $installer->startSetup();
 
         $table = $installer->getConnection()
-            ->newTable($installer->getTable(<?php echo $block->table_name() ?>))
+            ->newTable($installer->getTable('<?php echo $block->table_name() ?>'))
             ->addColumn(
                 'entity_id',
                 Table::TYPE_SMALLINT,
@@ -37,8 +37,11 @@ class InstallSchema implements InstallSchemaInterface
                 'Entity ID'
             );
 
-        $installer->getConnection()->createTable($table);
+    <?php foreach($block->getData('columns') as $tableName => $type): ?>
+    $table->addColumn('<?php echo $tableName ?>', <?php echo $block->TableType($type) ?>);
+    <?php endforeach; ?>
 
+        $installer->getConnection()->createTable($table);
         $installer->endSetup();
     }
 
