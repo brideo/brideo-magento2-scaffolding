@@ -1,6 +1,6 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Test\Service;
+namespace Brideo\Magento2Scaffolding\Tests\Service;
 
 use Brideo\Magento2Scaffolding\Service\ServiceInterface;
 use PHPUnit_Framework_TestCase;

@@ -7,4 +7,4 @@ before_script:
   - composer install
 
 script:
-  - vendor/bin/phpunit src/app/Test
+  - vendor/bin/phpunit src/app/Tests

@@ -1,27 +1,28 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Test\Service;
+namespace Brideo\Magento2Scaffolding\Tests\Service\Frontend;
 
-use Brideo\Magento2Scaffolding\Service\Model;
+use Brideo\Magento2Scaffolding\Service\Frontend\Route;
 use Brideo\Magento2Scaffolding\Service\ServiceInterface;
+use Brideo\Magento2Scaffolding\Tests\Service\AbstractBaseTest;
 
-class ModelTest extends AbstractBaseTest
+class RouteTest extends AbstractBaseTest
 {
 
     /**
-     * @var Model
+     * @var Route
      */
     protected $service;
 
     /**
      * Get the service class
      *
-     * @return ServiceInterface|Model
+     * @return ServiceInterface|Route
      */
     protected function getService() : ServiceInterface
     {
         if(!$this->service) {
-            $this->service = new Model('Brideo', 'Test','MyModel', true, '1.0.0', $this->getModuleDirectory());
+            $this->service = new Route('Brideo', 'Test', 'Frontname', 'Index', '1.0.0', $this->getModuleDirectory());
         }
 
         return $this->service;

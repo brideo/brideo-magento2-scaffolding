@@ -297,5 +297,5 @@ This command is still in development, if you're interested in contributing the t
 ## Running Tests
  
     composer install
-    vendor/bin/phpunit src/app/Test
+    vendor/bin/phpunit src/app/Tests
 

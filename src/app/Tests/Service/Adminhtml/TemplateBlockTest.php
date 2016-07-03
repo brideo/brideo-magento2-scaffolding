@@ -1,28 +1,28 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Test\Service\ResourceModel;
+namespace Brideo\Magento2Scaffolding\Tests\Service\Adminhtml;
 
-use Brideo\Magento2Scaffolding\Service\ResourceModel\Model;
+use Brideo\Magento2Scaffolding\Service\Adminhtml\TemplateBlock;
 use Brideo\Magento2Scaffolding\Service\ServiceInterface;
-use Brideo\Magento2Scaffolding\Test\Service\AbstractBaseTest;
+use Brideo\Magento2Scaffolding\Tests\Service\AbstractBaseTest;
 
-class ModelTest extends AbstractBaseTest
+class TemplateBlockTest extends AbstractBaseTest
 {
 
     /**
-     * @var Model
+     * @var TemplateBlock
      */
     protected $service;
 
     /**
      * Get the service class
      *
-     * @return ServiceInterface|Model
+     * @return ServiceInterface|TemplateBlock
      */
     protected function getService() : ServiceInterface
     {
         if(!$this->service) {
-            $this->service = new Model('Brideo', 'Test','MyModel', '1.0.0', $this->getModuleDirectory());
+            $this->service = new TemplateBlock('Brideo', 'Test', '1.0.0', $this->getModuleDirectory(), 'SomeBlock');
         }
 
         return $this->service;

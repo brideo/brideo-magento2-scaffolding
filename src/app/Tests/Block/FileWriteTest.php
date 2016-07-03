@@ -1,6 +1,6 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Test\Block;
+namespace Brideo\Magento2Scaffolding\Tests\Block;
 
 use Brideo\Magento2Scaffolding\Block\FileWrite;
 use PHPUnit_Framework_TestCase;
