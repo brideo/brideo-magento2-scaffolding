@@ -3,6 +3,12 @@ checks:
         code_rating: true
         duplication: true
 filter:
+    paths:
+        - "src/app"
     excluded_paths:
         - "src/app/Block/DataObject.php" # Magento File.
         - "src/app/Command" # This is goop and not business logic.
+build:
+    environment:
+        php:
+            version: 7.0
