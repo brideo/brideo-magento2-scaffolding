@@ -1,35 +1,27 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Test\Service\Setup;
+namespace Brideo\Magento2Scaffolding\Tests\Service;
 
+use Brideo\Magento2Scaffolding\Service\Model;
 use Brideo\Magento2Scaffolding\Service\ServiceInterface;
-use Brideo\Magento2Scaffolding\Service\Setup\InstallSchema;
-use Brideo\Magento2Scaffolding\Test\Service\AbstractBaseTest;
 
-class InstallSchemaTest extends AbstractBaseTest
+class ModelTest extends AbstractBaseTest
 {
 
     /**
-     * @var InstallSchema
+     * @var Model
      */
     protected $service;
 
     /**
      * Get the service class
      *
-     * @return ServiceInterface|InstallSchema
+     * @return ServiceInterface|Model
      */
     protected function getService() : ServiceInterface
     {
         if(!$this->service) {
-            $array = [
-                'name' => 'text',
-                'title' => 'text',
-                'content' => 'text',
-                'foreign' => 'integer',
-            ];
-
-            $this->service = new InstallSchema('Brideo', 'Test', $array, '1.0.0', $this->getModuleDirectory());
+            $this->service = new Model('Brideo', 'Test','MyModel', true, '1.0.0', $this->getModuleDirectory());
         }
 
         return $this->service;

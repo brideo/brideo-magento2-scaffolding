@@ -1,10 +1,10 @@
 <?php
 
-namespace Brideo\Magento2Scaffolding\Test\Service\ResourceModel\Model;
+namespace Brideo\Magento2Scaffolding\Tests\Service\ResourceModel\Model;
 
 use Brideo\Magento2Scaffolding\Service\ResourceModel\Model\Collection;
 use Brideo\Magento2Scaffolding\Service\ServiceInterface;
-use Brideo\Magento2Scaffolding\Test\Service\AbstractBaseTest;
+use Brideo\Magento2Scaffolding\Tests\Service\AbstractBaseTest;
 
 class CollectionTest extends AbstractBaseTest
 {
