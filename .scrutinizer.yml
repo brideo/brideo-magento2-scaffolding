@@ -1,5 +1,3 @@
-tools:
-    external_code_coverage: true
 checks:
     php:
         code_rating: true
@@ -14,3 +12,10 @@ build:
     environment:
         php:
             version: 7.0
+    tests:
+            override:
+                -
+                    command: phpunit --coverage-clover=./test-results/clover.xml
+                    coverage:
+                        file: ./test-results/clover.xml
+                        format: php-clover
